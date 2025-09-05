@@ -1,11 +1,18 @@
 const express = require('express')
-const authContoller = require('../controllers/auth.controller')
+const authController = require('../controllers/auth.controller')
 
 const router = express.Router()
 
-router.post('/user/register', authContoller.registerUser)
-router.post('/user/login', authContoller.loginUser)
-router.get('/user/logout', authContoller.logoutUser)
 
+// user auth APIs
+router.post('/user/register', authController.registerUser)
+router.post('/user/login', authController.loginUser)
+router.get('/user/logout', authController.logoutUser)
+
+
+//  food patners APIS
+router.post('/food-partner/register', authController.registerFoodPartner)
+router.post('/food-partner/login', authController.loginFoodPartner)
+router.get('/food-partner/logout', authController.logoutFoodPartner)
 
 module.exports = router
