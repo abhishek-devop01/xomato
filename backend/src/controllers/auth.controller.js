@@ -1,4 +1,5 @@
 const userModel = require("../models/user.model")
+const foodPatnerModel = require('../models/foodPatner.model')
 const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken')
 
@@ -81,6 +82,12 @@ async function logoutUser(req,res){
      res.status(200).json({
           message: "user logged out successfully"
      })
+
+}
+
+
+// food-patner controller
+async function registerFoodPatner(res, req){
 
 }
 
