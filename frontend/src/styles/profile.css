@@ -1,0 +1,127 @@
+@import './theme.css';
+
+/* Layout container */
+.profile-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Header block */
+.profile-header {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.profile-meta {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface-alt);
+  border: 2px solid var(--color-border);
+}
+
+.profile-info { display: grid; gap: var(--space-3); }
+
+/* Pills */
+.profile-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-business { font-size: 1.25rem; font-weight: 700; }
+.profile-address { font-size: 1.05rem; color: var(--color-text-secondary); }
+
+/* Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  border-top: 1px dashed var(--color-border);
+  padding-top: var(--space-6);
+}
+
+.profile-stat {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+.profile-stat-label {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+}
+
+.profile-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Separator line under header (as in wireframe) */
+.profile-sep {
+  height: 1px;
+  border: none;
+  background: var(--color-border);
+}
+
+/* Grid of videos */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.profile-grid-item { 
+    border: none;
+    aspect-ratio: 3 / 4; }
+
+.profile-grid-video {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .profile-meta { grid-template-columns: 96px 1fr; }
+  .profile-avatar { width: 96px; height: 96px; }
+}
+
+@media (max-width: 680px) {
+
+}
+
+@media (max-width: 420px) {
+  .profile-meta { grid-template-columns: 72px 1fr; }
+  .profile-avatar { width: 72px; height: 72px; }
+  .profile-stats { gap: var(--space-4); }
+  .profile-stat-label { font-size: 1rem; }
+  .profile-stat-value { font-size: 1.5rem; }
+}

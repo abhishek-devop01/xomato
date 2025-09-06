@@ -87,7 +87,7 @@ async function logoutUser(req,res){
 
 // food-patner controller
 async function registerFoodPartner(req, res){
-     const {name, email, password} = req.body;
+     const {name, email, password, phone, address, contactName} = req.body;
      const isAccountAlreadyExists = await foodPartnerModel.findOne({
           email
      })
@@ -104,7 +104,10 @@ async function registerFoodPartner(req, res){
      const foodPartner = await foodPartnerModel.create({
           name,
           email,
-          password: hashedPassword
+          password: hashedPassword,
+          address,
+          phone,
+          contactName
      });
 
      const token = jwt.sign({
