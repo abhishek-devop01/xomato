@@ -3,7 +3,7 @@ const foodPartnerModel = require('../models/foodPartner.model')
 const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken')
 
-
+// normal User
 async function registerUser(req,res){
      const {fullName, email, password} = req.body;
 
@@ -120,7 +120,10 @@ async function registerFoodPartner(req, res){
           foodPartner:{
                _id: foodPartner._id,
                email: foodPartner.email,
-               name: foodPartner.name
+               name: foodPartner.name,
+               address: foodPartner.address,
+               contactName: foodPartner.contactName,
+               phone: foodPartner.phone
           }
      })
 
